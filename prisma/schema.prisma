@@ -1,0 +1,76 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  email    String   @unique
+  name     String
+  resumes  Resume[] @relation(fields: [id], references: [userId])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Resume {
+  id            String       @id @default(auto()) @map("_id") @db.ObjectId
+  title         String       // Nome do currículo
+  userId        String       @db.ObjectId
+  user          User         @relation(fields: [userId], references: [id])
+  personalInfo  PersonalInfo // Informações pessoais
+  professionalSummary String? // Resumo profissional
+  education     Education[]  // Histórico de educação
+  experience    Experience[] // Experiência de trabalho
+  contact       Contact      // Contato
+  skills        Skill[]      // Competências
+  socialLinks   SocialLink[] // Links sociais
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+}
+
+model PersonalInfo {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  title    String // Ex: UX Designer
+  imageUrl String? // Foto do perfil
+}
+
+model Education {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId
+  degree    String
+  institution String
+  startYear String
+  endYear   String
+}
+
+model Experience {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  jobTitle String
+  company  String
+  startDate String // Ex: MM/YYYY
+  endDate   String? // Ex: MM/YYYY or null if current
+  city      String
+  description String? // Descrição do trabalho
+}
+
+model Contact {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  phone    String
+  email    String
+}
+
+model Skill {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+}
+
+model SocialLink {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  platform String // Ex: LinkedIn, GitHub
+  url      String
+}
+
