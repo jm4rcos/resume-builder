@@ -22,49 +22,60 @@ export default function ResumeForm() {
 
   return (
     <FormProvider {...form}>
-      <div className="max-w-2xl mx-auto p-4">
+      <div className="w-full mx-auto p-4 bg-background">
         <div className="flex justify-between mb-6">
           <Button variant="outline">Create</Button>
           <Button variant="outline">Templates</Button>
         </div>
 
-        <form onSubmit={form.handleSubmit(onSubmit, onError)}>
+        <form
+          className="w-full"
+          onSubmit={form.handleSubmit(onSubmit, onError)}
+        >
           <Accordion
             type="multiple"
             value={expandedItems}
             onValueChange={setExpandedItems}
             className="w-full space-y-4"
           >
-            <AccordionItem value="personal-info">
-              <AccordionTrigger>Personal Information</AccordionTrigger>
+            <AccordionItem value="personalInfo">
+              <AccordionTrigger error={form.formState.errors.personalInfo}>
+                Personal Information
+              </AccordionTrigger>
               <AccordionContent>
                 <PersonalInfoForm />
               </AccordionContent>
             </AccordionItem>
 
-            <AccordionItem value="employment-history">
-              <AccordionTrigger>Employment History</AccordionTrigger>
+            <AccordionItem value="experiences">
+              <AccordionTrigger error={form.formState.errors.experience}>
+                Experiences
+              </AccordionTrigger>
               <AccordionContent>
                 <ExperienceForm />
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="education">
-              <AccordionTrigger>Education</AccordionTrigger>
+              <AccordionTrigger error={form.formState.errors.education}>
+                Education
+              </AccordionTrigger>
               <AccordionContent>
                 <EducationForm />
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="skills">
-              <AccordionTrigger>Skills</AccordionTrigger>
+              <AccordionTrigger error={form.formState.errors.skills}>
+                Skills
+              </AccordionTrigger>
               <AccordionContent>
                 <SkillsForm />
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
-          <Button type="submit" className="w-full mt-6">
+          <Button variant="default" type="submit" className="w-full mt-6">
             Submit Resume
           </Button>
         </form>

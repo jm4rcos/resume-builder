@@ -33,7 +33,7 @@ export const useResumeForm = () => {
   });
 
   function onError(errors: unknown) {
-    console.log(errors);
+    console.error(errors);
   }
 
   async function onSubmit(data: ResumeFormData) {

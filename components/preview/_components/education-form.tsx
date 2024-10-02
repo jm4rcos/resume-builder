@@ -36,18 +36,6 @@ const EducationForm: React.FC = () => {
         name={"education.endDate" as keyof ResumeFormData}
         error={errors.education?.endDate?.message}
       />
-      {/* <Input {...register("education.degree")} placeholder="Degree" />
-      <Input {...register("education.institution")} placeholder="Institution" />
-      <Input
-        {...register("education.startDate")}
-        type="date"
-        placeholder="Start Date"
-      />
-      <Input
-        {...register("education.endDate")}
-        type="date"
-        placeholder="End Date"
-      /> */}
     </div>
   );
 };

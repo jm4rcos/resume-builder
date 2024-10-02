@@ -1,12 +1,15 @@
 import React from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { ResumeFormData } from "@/hooks/use-resume-form";
+import { InputField } from "@/components/input-field";
+import { DateField } from "@/components/date-field";
 
 const ExperienceForm: React.FC = () => {
-  const { control, register } = useFormContext<ResumeFormData>();
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext<ResumeFormData>();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "experience",
@@ -15,30 +18,43 @@ const ExperienceForm: React.FC = () => {
   return (
     <div className="space-y-4">
       {fields.map((field, index) => (
-        <div key={field.id} className="space-y-2 p-4 border rounded">
-          <Input
-            {...register(`experience.${index}.jobTitle`)}
+        <div key={field.id} className="space-y-4">
+          <InputField
             placeholder="Job Title"
+            name={`experience.${index}.jobTitle`}
+            error={errors.experience?.[index]?.jobTitle?.message}
           />
-          <Input
-            {...register(`experience.${index}.employer`)}
-            placeholder="Employer"
+          <InputField
+            placeholder="Company"
+            name={`experience.${index}.employer`}
+            error={errors.experience?.[index]?.employer?.message}
           />
-          <Input
-            {...register(`experience.${index}.startDate`)}
-            type="date"
+
+          <DateField
             placeholder="Start Date"
+            name={`experience.${index}.startDate`}
+            error={errors.experience?.[index]?.startDate?.message}
           />
-          <Input
-            {...register(`experience.${index}.endDate`)}
-            type="date"
+
+          <DateField
             placeholder="End Date"
+            name={`experience.${index}.endDate`}
+            error={errors.experience?.[index]?.endDate?.message}
           />
-          <Input {...register(`experience.${index}.city`)} placeholder="City" />
-          <Textarea
-            {...register(`experience.${index}.description`)}
+
+          <InputField
+            placeholder="City"
+            name={`experience.${index}.city`}
+            error={errors.experience?.[index]?.city?.message}
+          />
+
+          <InputField
             placeholder="Description"
+            name={`experience.${index}.description`}
+            error={errors.experience?.[index]?.description?.message}
+            type="textarea"
           />
+
           <Button type="button" onClick={() => remove(index)}>
             Remove
           </Button>
