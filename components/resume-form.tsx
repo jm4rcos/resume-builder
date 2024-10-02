@@ -40,7 +40,7 @@ export default function ResumeForm() {
             type="multiple"
             value={expandedItems}
             onValueChange={setExpandedItems}
-            className="w-full space-y-4"
+            className="w-full"
           >
             <AccordionItem value="personalInfo">
               <AccordionTrigger error={error.personalInfo}>

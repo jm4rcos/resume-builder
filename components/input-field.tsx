@@ -25,7 +25,7 @@ export const InputField = ({
   const { register } = useFormContext<ResumeFormData>();
 
   return (
-    <>
+    <div>
       {type === "textarea" ? (
         <Textarea
           placeholder={placeholder}
@@ -44,6 +44,6 @@ export const InputField = ({
         />
       )}
       {error && <ErrorMessage message={error} />}
-    </>
+    </div>
   );
 };
