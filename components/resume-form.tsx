@@ -2,6 +2,9 @@
 
 import { useState } from "react";
 import { FormProvider } from "react-hook-form";
+
+import { useResumeForm } from "@/hooks/use-resume-form";
+
 import {
   Accordion,
   AccordionContent,
@@ -10,7 +13,6 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import PersonalInfoForm from "./preview/_components/personal-information-form";
-import { useResumeForm } from "@/hooks/use-resume-form";
 import ExperienceForm from "./preview/_components/experience-form";
 import EducationForm from "./preview/_components/education-form";
 import SkillsForm from "./preview/_components/skills-form";
@@ -20,9 +22,11 @@ export default function ResumeForm() {
 
   const [expandedItems, setExpandedItems] = useState(["personal-info"]);
 
+  const error = form.formState.errors;
+
   return (
     <FormProvider {...form}>
-      <div className="w-full mx-auto p-4 bg-background">
+      <div className="w-full max-w-[250px] overflow-auto h-screen p-4 bg-background">
         <div className="flex justify-between mb-6">
           <Button variant="outline">Create</Button>
           <Button variant="outline">Templates</Button>
@@ -39,7 +43,7 @@ export default function ResumeForm() {
             className="w-full space-y-4"
           >
             <AccordionItem value="personalInfo">
-              <AccordionTrigger error={form.formState.errors.personalInfo}>
+              <AccordionTrigger error={error.personalInfo}>
                 Personal Information
               </AccordionTrigger>
               <AccordionContent>
@@ -48,7 +52,7 @@ export default function ResumeForm() {
             </AccordionItem>
 
             <AccordionItem value="experiences">
-              <AccordionTrigger error={form.formState.errors.experience}>
+              <AccordionTrigger error={error.experience}>
                 Experiences
               </AccordionTrigger>
               <AccordionContent>
@@ -57,7 +61,7 @@ export default function ResumeForm() {
             </AccordionItem>
 
             <AccordionItem value="education">
-              <AccordionTrigger error={form.formState.errors.education}>
+              <AccordionTrigger error={error.education}>
                 Education
               </AccordionTrigger>
               <AccordionContent>
@@ -66,16 +70,14 @@ export default function ResumeForm() {
             </AccordionItem>
 
             <AccordionItem value="skills">
-              <AccordionTrigger error={form.formState.errors.skills}>
-                Skills
-              </AccordionTrigger>
+              <AccordionTrigger error={error.skills}>Skills</AccordionTrigger>
               <AccordionContent>
                 <SkillsForm />
               </AccordionContent>
             </AccordionItem>
           </Accordion>
 
-          <Button variant="default" type="submit" className="w-full mt-6">
+          <Button type="submit" className="w-full mt-6">
             Submit Resume
           </Button>
         </form>
