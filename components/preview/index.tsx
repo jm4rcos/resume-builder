@@ -1,8 +1,6 @@
 "use client";
 
-import { useResumeForm } from "@/hooks/use-resume-form";
 import { useScaleStore } from "@/store/use-scale-store";
-import { useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 
 export const Preview = () => {
@@ -10,10 +8,6 @@ export const Preview = () => {
   const { watch } = useFormContext();
 
   console.log(watch("personalInfo"));
-
-  useEffect(() => {
-    console.log(watch("personalInfo"));
-  }, [watch]);
 
   return (
     <div
