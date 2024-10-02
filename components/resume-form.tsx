@@ -27,9 +27,13 @@ export default function ResumeForm() {
   return (
     <FormProvider {...form}>
       <div className="w-full max-w-[250px] overflow-auto h-screen p-4 bg-background">
-        <div className="flex justify-between mb-6">
-          <Button variant="outline">Create</Button>
-          <Button variant="outline">Templates</Button>
+        <div className="flex justify-between gap-2 bg-foreground p-2 rounded-lg mb-6">
+          <Button type="button" className="w-full bg-background">
+            Create
+          </Button>
+          <Button type="button" className="w-full bg-transparent border-0">
+            Templates
+          </Button>
         </div>
 
         <form
@@ -77,7 +81,7 @@ export default function ResumeForm() {
             </AccordionItem>
           </Accordion>
 
-          <Button type="submit" className="w-full mt-6">
+          <Button variant="primary" type="submit" className="w-full mt-6">
             Submit Resume
           </Button>
         </form>

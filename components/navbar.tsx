@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ModeToggle } from "./mode-toggle";
+import { NavbarPreviewOptions } from "./preview/_components/navbar-preview-options";
 
 // import { signOut, useSession } from "next-auth/react";
 
@@ -11,6 +12,7 @@ export const Navbar = () => {
       <Link href="/" className="text-title text-2xl font-semibold">
         Code Explorer
       </Link>
+      <NavbarPreviewOptions />
       <div className="flex items-center gap-2">
         <div className="ml-2">
           <ModeToggle />
