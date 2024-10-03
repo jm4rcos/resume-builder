@@ -17,6 +17,12 @@ import ExperienceForm from "./preview/_components/experience-form";
 import EducationForm from "./preview/_components/education-form";
 import SkillsForm from "./preview/_components/skills-form";
 import PersonalInfoForm from "./preview/_components/personal-information-form";
+import {
+  BriefcaseBusinessIcon,
+  GraduationCapIcon,
+  LightbulbIcon,
+  User2Icon,
+} from "lucide-react";
 
 interface ResumeFormProps {
   form: UseFormReturn<ResumeFormData>;
@@ -48,7 +54,7 @@ export default function ResumeForm({ form }: ResumeFormProps) {
           className="w-full"
         >
           <AccordionItem value="personalInfo">
-            <AccordionTrigger error={error.personalInfo}>
+            <AccordionTrigger icon={User2Icon} error={error.personalInfo}>
               Personal Information
             </AccordionTrigger>
             <AccordionContent>
@@ -57,7 +63,10 @@ export default function ResumeForm({ form }: ResumeFormProps) {
           </AccordionItem>
 
           <AccordionItem value="experiences">
-            <AccordionTrigger error={error.experience}>
+            <AccordionTrigger
+              icon={BriefcaseBusinessIcon}
+              error={error.experience}
+            >
               Experiences
             </AccordionTrigger>
             <AccordionContent>
@@ -66,7 +75,7 @@ export default function ResumeForm({ form }: ResumeFormProps) {
           </AccordionItem>
 
           <AccordionItem value="education">
-            <AccordionTrigger error={error.education}>
+            <AccordionTrigger icon={GraduationCapIcon} error={error.education}>
               Education
             </AccordionTrigger>
             <AccordionContent>
@@ -75,7 +84,9 @@ export default function ResumeForm({ form }: ResumeFormProps) {
           </AccordionItem>
 
           <AccordionItem value="skills">
-            <AccordionTrigger error={error.skills}>Skills</AccordionTrigger>
+            <AccordionTrigger icon={LightbulbIcon} error={error.skills}>
+              Skills
+            </AccordionTrigger>
             <AccordionContent>
               <SkillsForm />
             </AccordionContent>

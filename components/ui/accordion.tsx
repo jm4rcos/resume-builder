@@ -5,15 +5,18 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon } from "@radix-ui/react-icons";
 
 import { cn } from "@/lib/utils";
-import { TriangleAlertIcon } from "lucide-react";
+import { LucideProps, TriangleAlertIcon } from "lucide-react";
 import { FieldError, FieldErrorsImpl, Merge } from "react-hook-form";
-import { ResumeFormData } from "@/hooks/use-resume-form";
+import { ResumeFormData } from "@/interfaces";
 
 const Accordion = AccordionPrimitive.Root;
 
 interface AccordionItemProps
   extends React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger> {
   error?: Merge<FieldError, FieldErrorsImpl<ResumeFormData>>;
+  icon?: React.ForwardRefExoticComponent<
+    Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>
+  >;
 }
 
 const AccordionItem = React.forwardRef<
@@ -31,7 +34,7 @@ AccordionItem.displayName = "AccordionItem";
 const AccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   AccordionItemProps
->(({ className, children, error, ...props }, ref) => (
+>(({ className, children, error, icon: Icon, ...props }, ref) => (
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       ref={ref}
@@ -41,7 +44,10 @@ const AccordionTrigger = React.forwardRef<
       )}
       {...props}
     >
-      {children}
+      <div className="flex items-center gap-2 font-semibold text-texte">
+        {Icon && <Icon className="w-5 h-5 text-slate-400" />}
+        {children}
+      </div>
       {error && (
         <TriangleAlertIcon className="w-4 h-4 mr-auto text-rose-500 alerticon" />
       )}

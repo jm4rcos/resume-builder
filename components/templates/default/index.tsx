@@ -29,7 +29,7 @@ export const DefaultTemplate = () => {
       }}
       className="bg-background flex flex-col min-w-[210mm]"
     >
-      <div className="flex flex-col gap-8 h-full p-12">
+      <div className="flex flex-col gap-2 h-full p-12">
         <Header {...personalInfo} />
         <div className="flex py-4 gap-6">
           <div className="flex w-1/3 h-full pr-2 flex-col gap-6">

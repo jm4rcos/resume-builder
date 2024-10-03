@@ -18,6 +18,7 @@ const SkillsForm: React.FC = () => {
     <div className="space-y-4">
       {fields.map((field, index) => (
         <div key={field.id} className="flex space-x-2">
+          {/* TODO: fix */}
           <InputField
             name={`skills.${index}.value` as keyof ResumeFormData}
             error={errors.skills?.[index]?.message}

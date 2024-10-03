@@ -9,7 +9,7 @@ export const Header = ({ firstName, lastName, profession }: IPersonalInfo) => {
         <AvatarFallback>CN</AvatarFallback>
       </Avatar>
 
-      <div className="flex flex-col justify-around">
+      <div className="flex flex-col h-full justify-around">
         <div>
           <h1 className="max-w-xs">{firstName || "First Name"}</h1>
           {lastName ? (

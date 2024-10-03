@@ -1,8 +1,8 @@
 import { Path, useFormContext } from "react-hook-form";
 import { cn } from "@/lib/utils";
-import { ResumeFormData } from "@/hooks/use-resume-form";
 import { ErrorMessage } from "./ui/error-message";
 import { Label } from "./ui/label";
+import { ResumeFormData } from "@/interfaces";
 
 interface DateFieldProps {
   placeholder: string;
@@ -26,7 +26,7 @@ export const DateField = ({
         <input
           type="date"
           className={cn(
-            "w-full bg-foreground text-title p-2 border rounded focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
+            "w-full bg-foreground text-title p-2 border rounded disabled:cursor-not-allowed disabled:opacity-50",
             className
           )}
           {...register(name, { valueAsDate: true })}
