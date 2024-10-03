@@ -1,10 +1,9 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
 
-import { ResumeFormData } from "@/hooks/use-resume-form";
-
 import { InputField } from "@/components/input-field";
 import { DateField } from "@/components/date-field";
+import { ResumeFormData } from "@/interfaces";
 
 const EducationForm: React.FC = () => {
   const {

@@ -1,15 +1,14 @@
 "use client";
 
+import { ResumeFormData } from "@/interfaces";
 import { resumeSchema } from "@/schemas/resume-schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
-
-export type ResumeFormData = z.infer<typeof resumeSchema>;
 
 export const defaultValues: Partial<ResumeFormData> = {
   personalInfo: {
-    name: "",
+    firstName: "",
+    lastName: "",
     profession: "",
     phone: "",
     email: "",

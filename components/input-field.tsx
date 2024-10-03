@@ -1,11 +1,11 @@
 import { Path, useFormContext } from "react-hook-form";
 
 import { cn } from "@/lib/utils";
-import { ResumeFormData } from "@/hooks/use-resume-form";
 
 import { ErrorMessage } from "./ui/error-message";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import { ResumeFormData } from "@/interfaces";
 
 interface InputFieldProps {
   placeholder: string;

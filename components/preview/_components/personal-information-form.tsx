@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormContext } from "react-hook-form";
-import { ResumeFormData } from "@/hooks/use-resume-form";
 import { InputField } from "@/components/input-field";
+import { ResumeFormData } from "@/interfaces";
 
 const PersonalInfoForm: React.FC = () => {
   const {
@@ -11,9 +11,15 @@ const PersonalInfoForm: React.FC = () => {
   return (
     <div className="space-y-3">
       <InputField
-        placeholder="Your Name"
-        error={errors.personalInfo?.name?.message}
-        name={"personalInfo.name" as keyof ResumeFormData}
+        placeholder="First Name"
+        error={errors.personalInfo?.firstName?.message}
+        name={"personalInfo.firstName" as keyof ResumeFormData}
+      />
+
+      <InputField
+        placeholder="Last Name"
+        error={errors.personalInfo?.lastName?.message}
+        name={"personalInfo.lastName" as keyof ResumeFormData}
       />
 
       <InputField

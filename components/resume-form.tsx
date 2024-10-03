@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { FormProvider, UseFormReturn } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 
-import { ResumeFormData, useResumeForm } from "@/hooks/use-resume-form";
+import { useResumeForm } from "@/hooks/use-resume-form";
+import { ResumeFormData } from "@/interfaces";
 
 import {
   Accordion,
@@ -12,10 +13,10 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import PersonalInfoForm from "./preview/_components/personal-information-form";
 import ExperienceForm from "./preview/_components/experience-form";
 import EducationForm from "./preview/_components/education-form";
 import SkillsForm from "./preview/_components/skills-form";
+import PersonalInfoForm from "./preview/_components/personal-information-form";
 
 interface ResumeFormProps {
   form: UseFormReturn<ResumeFormData>;
@@ -29,7 +30,7 @@ export default function ResumeForm({ form }: ResumeFormProps) {
   const error = form.formState.errors;
 
   return (
-    <div className="w-full max-w-[250px] pb-20 overflow-auto h-screen p-4 bg-background">
+    <div className="w-full pb-20 overflow-auto h-screen p-4 bg-background">
       <div className="flex justify-between gap-2 bg-foreground p-2 rounded-lg mb-6">
         <Button type="button" className="w-full bg-background">
           Create
