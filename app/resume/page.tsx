@@ -3,7 +3,7 @@
 import { FormProvider } from "react-hook-form";
 import { useResumeForm } from "@/hooks/use-resume-form";
 import { DesktopPanel } from "@/components/desktop-panel";
-import ResumeForm from "@/components/resume-form";
+import { InfoSidebar } from "@/components/info-sidebar";
 
 const ResumePage = () => {
   const { form } = useResumeForm();
@@ -14,7 +14,7 @@ const ResumePage = () => {
         <DesktopPanel form={form} />
       </div>
       <div className="md:hidden flex w-full pt-16 bg-foreground">
-        <ResumeForm form={form} />
+        <InfoSidebar form={form} />
       </div>
     </FormProvider>
   );

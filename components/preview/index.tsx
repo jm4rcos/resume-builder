@@ -2,6 +2,6 @@
 
 import { DefaultTemplate } from "../templates/default";
 
-export const Preview = () => {
-  return <DefaultTemplate />;
+export const Preview = ({ size }: { size?: number }) => {
+  return <DefaultTemplate size={size} />;
 };

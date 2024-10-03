@@ -7,8 +7,6 @@ interface ExperienceProps {
 }
 
 export const Experience = ({ data }: ExperienceProps) => {
-  console.log(data);
-
   return (
     <div className="w-full space-y-4 flex flex-col">
       <h3 className="text-xl font-semibold">Experiences</h3>

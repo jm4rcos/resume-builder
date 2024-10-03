@@ -13,16 +13,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import ExperienceForm from "./preview/_components/experience-form";
-import EducationForm from "./preview/_components/education-form";
-import SkillsForm from "./preview/_components/skills-form";
-import PersonalInfoForm from "./preview/_components/personal-information-form";
 import {
   BriefcaseBusinessIcon,
   GraduationCapIcon,
   LightbulbIcon,
   User2Icon,
 } from "lucide-react";
+import PersonalInfoForm from "@/components/preview/_components/personal-information-form";
+import ExperienceForm from "@/components/preview/_components/experience-form";
+import EducationForm from "@/components/preview/_components/education-form";
+import SkillsForm from "@/components/preview/_components/skills-form";
 
 interface ResumeFormProps {
   form: UseFormReturn<ResumeFormData>;
@@ -37,7 +37,7 @@ export default function ResumeForm({ form }: ResumeFormProps) {
 
   return (
     <div className="w-full pb-20 overflow-auto h-screen p-4 bg-background">
-      <div className="flex justify-between gap-2 bg-foreground p-2 rounded-lg mb-6">
+      <div className="md:flex hidden p-2 justify-between gap-2 bg-foreground  rounded-lg mb-6">
         <Button type="button" className="w-full bg-background">
           Create
         </Button>
@@ -45,7 +45,6 @@ export default function ResumeForm({ form }: ResumeFormProps) {
           Templates
         </Button>
       </div>
-
       <form className="w-full" onSubmit={form.handleSubmit(onSubmit, onError)}>
         <Accordion
           type="multiple"

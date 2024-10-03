@@ -12,7 +12,9 @@ export const Navbar = () => {
       <Link href="/" className="text-title text-2xl font-semibold">
         Code Explorer
       </Link>
-      <NavbarPreviewOptions />
+      <div className="md:flex hidden">
+        <NavbarPreviewOptions />
+      </div>
       <div className="flex items-center gap-2">
         <div className="ml-2">
           <ModeToggle />
