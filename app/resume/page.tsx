@@ -51,7 +51,7 @@ const ResumePage = ({
         <ResizableHandle withHandle className="" />
 
         <ResizablePanel
-          className=" max-w-[500px] lg:max-w-[500px] min-w-[230px] lg:min-w-[250px]"
+          className="max-w-[500px] lg:max-w-[500px] min-w-[230px] lg:min-w-[250px]"
           defaultSize={defaultLayout[2]}
         >
           <EditSidebar />
