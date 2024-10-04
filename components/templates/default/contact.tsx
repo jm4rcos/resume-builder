@@ -10,13 +10,15 @@ export const Contact = ({ phone, email }: IPersonalInfo) => {
       <Separator className="w-10 py-0.5 bg-link" />
 
       <div className="flex flex-col gap-2">
+        {phone && (
+          <div>
+            <Label>Phone</Label>
+            <p className="text-title">{phone || "00 000000000"}</p>
+          </div>
+        )}
         <div>
-          <Label>Phone</Label>
-          <p className="text-title">{phone || "00 000000000"}</p>
-        </div>
-        <div>
-          <Label>Email</Label>
-          <p className="text-title">{email || "email@example.com"}</p>
+          <Label className="font-semibold">Email</Label>
+          <p className="text-text">{email || "email@example.com"}</p>
         </div>
       </div>
     </div>

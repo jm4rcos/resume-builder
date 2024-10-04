@@ -41,7 +41,11 @@ export default function ResumeForm({ form }: ResumeFormProps) {
         <Button type="button" className="w-full bg-background">
           Create
         </Button>
-        <Button type="button" className="w-full bg-transparent border-0">
+        <Button
+          type="button"
+          disabled
+          className="w-full cursor-not-allowed bg-transparent border-0"
+        >
           Templates
         </Button>
       </div>

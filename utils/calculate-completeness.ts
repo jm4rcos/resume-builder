@@ -11,6 +11,13 @@ type CompletionResult = {
   overallFeedback: string;
 };
 
+const SECTION_WEIGHTS = {
+  personalInfo: 20,
+  experience: 35,
+  education: 25,
+  skills: 20,
+};
+
 const determineProfileLevel = (completeness: number): string => {
   if (completeness >= 90) return "Gold";
   if (completeness >= 75) return "Silver";
@@ -20,27 +27,31 @@ const determineProfileLevel = (completeness: number): string => {
 
 export const calculateCompleteness = (
   resumeData: ResumeFormData
-  // careerLevel: "junior" | "mid" | "senior",
 ): CompletionResult => {
-  const sections = [
-    calculatePersonalInfoCompleteness(resumeData.personalInfo),
-    calculateExperienceCompleteness(resumeData.experience),
-    calculateEducationCompleteness(resumeData.education),
-    calculateSkillsCompleteness(resumeData.skills),
-  ];
+  const sections = {
+    personalInfo: calculatePersonalInfoCompleteness(resumeData.personalInfo),
+    experience: calculateExperienceCompleteness(resumeData.experience),
+    education: calculateEducationCompleteness(resumeData.education),
+    skills: calculateSkillsCompleteness(resumeData.skills),
+  };
 
-  const totalCompleteness = sections.reduce(
-    (sum, section) => sum + section.completeness,
+  const weightedCompleteness = Object.entries(sections).reduce(
+    (sum, [sectionName, sectionResult]) => {
+      const weight =
+        SECTION_WEIGHTS[sectionName as keyof typeof SECTION_WEIGHTS];
+      return sum + (sectionResult.completeness * weight) / 100;
+    },
     0
   );
-  const allFeedback = sections.flatMap((section) => section.feedback);
 
-  const completeness = Math.round(totalCompleteness);
+  const allFeedback = Object.values(sections).flatMap(
+    (section) => section.feedback
+  );
+
+  const completeness = Math.round(weightedCompleteness);
   const profileLevel = determineProfileLevel(completeness);
 
-  // Add overall feedback based on profile level
   const overallFeedback = getOverallFeedback(profileLevel);
-  // allFeedback.push(overallFeedback);
 
   return { completeness, feedback: allFeedback, profileLevel, overallFeedback };
 };

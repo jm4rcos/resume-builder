@@ -7,5 +7,5 @@ export const personalInfoSchema = z.object({
   phone: z.string().optional(),
   email: z.string().email("Invalid email"),
   imageUrl: z.string().optional(),
-  summary: z.string().optional(),
+  summary: z.string().max(400, "Summary is too long").optional(),
 });

@@ -1,6 +1,6 @@
 "use client";
 
-import { UseFormReturn, useWatch } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 import { Preview } from "../preview";
 import {
   ResizableHandle,
@@ -10,7 +10,6 @@ import {
 import { ResumeFormData } from "@/interfaces";
 import ResumeForm from "@/app/resume/_components/resume-form";
 import { ResumeStatsSidebar } from "@/app/resume/_components/resume-stats-sidebar";
-import { calculateCompleteness } from "@/utils/calculate-completeness";
 
 export const DesktopPanel = ({
   defaultLayout = [140, 600, 100],
@@ -22,12 +21,6 @@ export const DesktopPanel = ({
   const onLayout = (sizes: number[]) => {
     document.cookie = `react-resizable-panels:layout=${JSON.stringify(sizes)}`;
   };
-
-  const formValues = useWatch({
-    control: form.control,
-  });
-
-  const { feedback } = calculateCompleteness(formValues as ResumeFormData);
   return (
     <ResizablePanelGroup onLayout={onLayout} direction="horizontal">
       <ResizablePanel
@@ -52,7 +45,7 @@ export const DesktopPanel = ({
         defaultSize={defaultLayout[2]}
       >
         <div className="w-full pb-16 h-screen overflow-auto">
-          <ResumeStatsSidebar form={form} feedback={feedback} />
+          <ResumeStatsSidebar form={form} />
         </div>
       </ResizablePanel>
     </ResizablePanelGroup>

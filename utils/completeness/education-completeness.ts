@@ -1,29 +1,32 @@
 import { ResumeFormData } from "@/interfaces";
-import { isNonEmptyString } from "@/lib/utils";
 
 export const calculateEducationCompleteness = (
   education: ResumeFormData["education"]
 ): { completeness: number; feedback: string[] } => {
-  const weight = 25;
-  const fields = ["degree", "institution", "endDate"] as const;
+  const requiredFields = ["degree", "institution", "endDate"];
+  const optionalFields = ["startDate"];
   const feedback: string[] = [];
 
   if (education) {
-    const filledFields = fields.filter(
-      (field) =>
-        isNonEmptyString(education[field]) || education[field] instanceof Date
-    );
+    const requiredFieldsComplete = requiredFields.filter(
+      (field) => education[field as keyof typeof education]
+    ).length;
+    const optionalFieldsComplete = optionalFields.filter(
+      (field) => education[field as keyof typeof education]
+    ).length;
 
-    if (filledFields.length < fields.length) {
-      feedback.push(
-        "Complete all fields in your education (Degree, Institution, End Date, etc.)."
-      );
+    const requiredCompleteness =
+      (requiredFieldsComplete / requiredFields.length) * 80;
+    const optionalCompleteness =
+      (optionalFieldsComplete / optionalFields.length) * 20;
+
+    const completeness = requiredCompleteness + optionalCompleteness;
+
+    if (requiredFieldsComplete < requiredFields.length) {
+      feedback.push("Complete all required education fields.");
     }
 
-    return {
-      completeness: (filledFields.length / fields.length) * weight,
-      feedback,
-    };
+    return { completeness, feedback };
   }
 
   feedback.push("Add your education details.");

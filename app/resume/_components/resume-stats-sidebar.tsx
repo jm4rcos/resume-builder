@@ -25,8 +25,6 @@ export const ResumeStatsSidebar = ({ form }: ResumeStatsSidebarProps) => {
   const { feedback, profileLevel, overallFeedback } = calculateCompleteness(
     formValues as ResumeFormData
   );
-  console.log(overallFeedback, profileLevel);
-
   return (
     <div className="flex bg-background pb-16 px-4 flex-col items-center w-full">
       <ResumeRadialChart form={form} />

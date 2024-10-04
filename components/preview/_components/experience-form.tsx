@@ -1,21 +1,33 @@
-import React from "react";
+"use client";
+
+import { useState } from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
 
-import { ResumeFormData } from "@/interfaces";
-
-import { Button } from "@/components/ui/button";
-import { InputField } from "@/components/input-field";
+import { CheckboxField } from "@/components/checkbox-field";
 import { DateField } from "@/components/date-field";
+import { InputField } from "@/components/input-field";
+import { Button } from "@/components/ui/button";
+import { ResumeFormData } from "@/interfaces";
 
 const ExperienceForm: React.FC = () => {
   const {
     control,
     formState: { errors },
+    setValue,
   } = useFormContext<ResumeFormData>();
   const { fields, append, remove } = useFieldArray({
     control,
     name: "experience",
   });
+
+  const handleCurrent = (value: string | boolean, index: number) => {
+    setIsCurrent(value as boolean);
+    setValue(`experience.${index}.present`, !isCurrent);
+    console.log(value, index);
+  };
+  const [isCurrent, setIsCurrent] = useState(
+    control._formValues.experience[0]?.present || false
+  );
 
   return (
     <div className="space-y-4">
@@ -38,11 +50,19 @@ const ExperienceForm: React.FC = () => {
             error={errors.experience?.[index]?.startDate?.message}
           />
 
-          <DateField
-            placeholder="End Date"
-            name={`experience.${index}.endDate`}
-            error={errors.experience?.[index]?.endDate?.message}
+          <CheckboxField
+            index={index}
+            onChange={handleCurrent}
+            placeholder="I currently work here"
           />
+
+          {isCurrent && (
+            <DateField
+              placeholder="End Date"
+              name={`experience.${index}.endDate`}
+              error={errors.experience?.[index]?.endDate?.message}
+            />
+          )}
 
           <InputField
             placeholder="City"

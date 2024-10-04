@@ -28,6 +28,7 @@ export interface ResumeEntity {
     endDate?: Date;
     description?: string;
     city?: string;
+    present?: boolean;
   }>;
   education?: {
     degree: string;

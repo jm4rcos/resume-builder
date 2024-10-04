@@ -24,6 +24,32 @@ h1 {
   @apply text-title;
 }
 
+@media print {
+  .page-break {
+    page-break-after: always;
+  }
+  body {
+    background: var(--background) !important;
+  }
+  .page {
+    box-shadow: none !important;
+    margin: 0 !important;
+    width: 100% !important;
+    min-height: auto !important;
+  }
+}
+
+@media screen {
+  .page {
+    background: var(--background);
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+    margin: 1cm auto;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 2cm;
+  }
+}
+
 @layer base {
   :root {
     --background: #fff;
