@@ -18,10 +18,6 @@ export const DefaultTemplate = ({ size }: { size?: number }) => {
   const education: IEducation = watch("education");
   const experience: IExperience[] = watch("experience");
 
-  console.log("personalInfo", personalInfo);
-  console.log("education", education);
-  console.log("experience", experience);
-
   return (
     <div
       style={{

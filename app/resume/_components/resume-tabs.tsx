@@ -1,24 +1,17 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { EyeIcon, FileChartColumnIcon, FileIcon } from "lucide-react";
 import ResumeForm from "./resume-form";
-import { UseFormReturn, useWatch } from "react-hook-form";
+import { UseFormReturn } from "react-hook-form";
 import { ResumeFormData } from "@/interfaces";
 import { Preview } from "@/components/preview";
 import { NavbarPreviewOptions } from "@/components/preview/_components/navbar-preview-options";
 import { ResumeStatsSidebar } from "./resume-stats-sidebar";
-import { calculateCompleteness } from "@/utils/calculate-completeness";
 
 export const ResumeTabs = ({
   form,
 }: {
   form: UseFormReturn<ResumeFormData>;
 }) => {
-  const formValues = useWatch({
-    control: form.control,
-  });
-
-  const { feedback } = calculateCompleteness(formValues as ResumeFormData);
-
   return (
     <Tabs
       defaultValue="info"
@@ -54,7 +47,12 @@ export const ResumeTabs = ({
         className="relative h-screen items-center bg-foreground -mt-4"
         value="overview"
       >
-        <ResumeStatsSidebar form={form} feedback={feedback} />
+        <ResumeStatsSidebar
+          form={form}
+          // feedback={feedback}
+          // profileLevel={profileLevel}
+          // overallFeedback={overallFeedback}
+        />
       </TabsContent>
     </Tabs>
   );

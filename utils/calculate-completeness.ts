@@ -8,6 +8,7 @@ type CompletionResult = {
   completeness: number;
   feedback: string[];
   profileLevel: string;
+  overallFeedback: string;
 };
 
 const determineProfileLevel = (completeness: number): string => {
@@ -39,9 +40,9 @@ export const calculateCompleteness = (
 
   // Add overall feedback based on profile level
   const overallFeedback = getOverallFeedback(profileLevel);
-  allFeedback.push(overallFeedback);
+  // allFeedback.push(overallFeedback);
 
-  return { completeness, feedback: allFeedback, profileLevel };
+  return { completeness, feedback: allFeedback, profileLevel, overallFeedback };
 };
 
 function getOverallFeedback(profileLevel: string): string {
