@@ -46,6 +46,7 @@ h1 {
     margin: 1cm auto;
     width: 210mm;
     min-height: 297mm;
+    overflow: hidden;
     padding: 2cm;
   }
 }

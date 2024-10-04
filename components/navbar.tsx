@@ -10,7 +10,7 @@ export const Navbar = () => {
   return (
     <nav className="absolute w-full bg-background top-0 left-0 right-0 flex items-center h-16 justify-between px-8">
       <Link href="/" className="text-title text-2xl font-semibold">
-        Code Explorer
+        Resumr
       </Link>
       <div className="md:flex hidden">
         <NavbarPreviewOptions />

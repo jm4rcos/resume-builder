@@ -8,8 +8,8 @@ import {
   ResizablePanelGroup,
 } from "../ui/resizable";
 import { ResumeFormData } from "@/interfaces";
-import ResumeForm from "@/app/resume/_components/resume-form";
-import { ResumeStatsSidebar } from "@/app/resume/_components/resume-stats-sidebar";
+import ResumeForm from "@/app/(resume)/_components/resume-form";
+import { ResumeStatsSidebar } from "@/app/(resume)/_components/resume-stats-sidebar";
 import { exportPDF } from "@/lib/convert-to-pdf";
 import { Button } from "../ui/button";
 import { DownloadIcon } from "lucide-react";

@@ -37,7 +37,7 @@ export const DefaultTemplate = ({ size }: { size?: number }) => {
               {education.degree && <Education {...education} />}
               {skills.length > 0 && <Skills data={skills} />}
             </div>
-            <div className="flex flex-col gap-8 w-2/3">
+            <div className="flex mt-8 h-full flex-col gap-8 w-2/3">
               <Profile {...personalInfo} />
               {experience.length > 0 && <Experience data={experience} />}
             </div>

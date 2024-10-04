@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/navbar";
 
 const ResumeLayout = ({ children }: { children: React.ReactNode }) => {

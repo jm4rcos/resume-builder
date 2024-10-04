@@ -1,11 +1,9 @@
-"use client";
-
-import { FormProvider } from "react-hook-form";
-import { useResumeForm } from "@/hooks/use-resume-form";
 import { DesktopPanel } from "@/components/desktop-panel";
 import { InfoSidebar } from "@/components/info-sidebar";
+import { useResumeForm } from "@/hooks/use-resume-form";
+import { FormProvider } from "react-hook-form";
 
-const ResumePage = () => {
+const ResumeContent = () => {
   const { form } = useResumeForm();
 
   return (
@@ -20,4 +18,4 @@ const ResumePage = () => {
   );
 };
 
-export default ResumePage;
+export default ResumeContent;

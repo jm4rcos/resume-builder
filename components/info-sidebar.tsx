@@ -1,4 +1,4 @@
-import { ResumeTabs } from "@/app/resume/_components/resume-tabs";
+import { ResumeTabs } from "@/app/(resume)/_components/resume-tabs";
 import { UseFormReturn } from "react-hook-form";
 import { ResumeFormData } from "@/interfaces";
 

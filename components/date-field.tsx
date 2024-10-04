@@ -26,7 +26,7 @@ export const DateField = ({
         <input
           type="date"
           className={cn(
-            "w-full bg-foreground text-title p-2 border rounded disabled:cursor-not-allowed disabled:opacity-50",
+            "w-full text-title p-2 border rounded disabled:cursor-not-allowed disabled:opacity-50",
             className
           )}
           {...register(name, { valueAsDate: true })}
