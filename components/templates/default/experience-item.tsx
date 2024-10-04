@@ -35,10 +35,9 @@ export const ExperienceItem = ({ data }: { data: IExperience[] }) => {
                 <h3 className="text-xl font-semibold flex w-full">
                   {jobTitle || "Job Title"}
                 </h3>
-                <p className="text-text text-base">
-                  {description ||
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "}
-                </p>
+                {description && (
+                  <p className="text-text text-base">{description}</p>
+                )}
               </div>
             </Fragment>
           );

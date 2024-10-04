@@ -7,9 +7,9 @@ export const options: Partial<Parameters<typeof html2PDF>[1]> = {
     bottom: 0,
     left: 0,
   },
-  output: "./my-resume.pdf",
+  output: "my-resume.pdf",
   imageQuality: 0.98,
-  imageType: "image/jpeg",
+  imageType: "image/png",
   html2canvas: {
     scale: 2,
     logging: true,
