@@ -24,11 +24,11 @@ const EducationForm: React.FC = () => {
         error={errors.education?.institution?.message}
       />
 
-      <DateField
+      {/* <DateField
         placeholder="Start Date"
         name={"education.startDate" as keyof ResumeFormData}
         error={errors.education?.startDate?.message}
-      />
+      /> */}
 
       <DateField
         placeholder="End Date"

@@ -1,9 +1,11 @@
 import React from "react";
 import { useFieldArray, useFormContext } from "react-hook-form";
+
+import { ResumeFormData } from "@/interfaces";
+
 import { Button } from "@/components/ui/button";
 import { InputField } from "@/components/input-field";
 import { DateField } from "@/components/date-field";
-import { ResumeFormData } from "@/interfaces";
 
 const ExperienceForm: React.FC = () => {
   const {

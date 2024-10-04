@@ -10,10 +10,10 @@ const ResumePage = () => {
 
   return (
     <FormProvider {...form}>
-      <div className="md:flex hidden w-full pt-16 bg-foreground">
+      <div className="md:flex hidden w-full h-screen overflow-auto pt-16 bg-foreground">
         <DesktopPanel form={form} />
       </div>
-      <div className="md:hidden flex w-full pt-16 bg-foreground">
+      <div className="md:hidden flex w-full h-screen overflow-auto pt-16 bg-foreground">
         <InfoSidebar form={form} />
       </div>
     </FormProvider>

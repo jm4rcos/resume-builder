@@ -16,14 +16,10 @@ export const Education = ({
 
       <div>
         <div className="flex items-center space-x-1 text-sm">
-          <p className="text-title">
-            {format(startDate, "MM/yyyy") || "Start Date"}
-          </p>
+          <p className="text-title">{format(startDate, "MM/yyyy")}</p>
           <Separator className="w-1 text-title" />
           {endDate && (
-            <p className="text-sm text-title">
-              {format(endDate, "MM/yyyy") || "End Date"}
-            </p>
+            <p className="text-sm text-title">{format(endDate, "MM/yyyy")}</p>
           )}
         </div>
         <p className="text-sm text-title">{institution || "Institution"}</p>

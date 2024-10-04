@@ -18,6 +18,10 @@ export const DefaultTemplate = ({ size }: { size?: number }) => {
   const education: IEducation = watch("education");
   const experience: IExperience[] = watch("experience");
 
+  console.log("personalInfo", personalInfo);
+  console.log("education", education);
+  console.log("experience", experience);
+
   return (
     <div
       style={{
@@ -32,9 +36,9 @@ export const DefaultTemplate = ({ size }: { size?: number }) => {
       <div className="flex flex-col gap-2 h-full p-12">
         <Header {...personalInfo} />
         <div className="flex py-4 gap-6">
-          <div className="flex w-1/3 h-full pr-2 flex-col gap-6">
-            {education && <Education {...education} />}
+          <div className="flex w-1/3 h-full pr-2 flex-col gap-4">
             <Contact {...personalInfo} />
+            {education.degree && <Education {...education} />}
           </div>
           <div className="flex flex-col gap-12 w-full">
             <Profile {...personalInfo} />

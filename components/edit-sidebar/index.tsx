@@ -15,7 +15,6 @@ interface EditSidebarProps {
 export const EditSidebar = ({ form }: EditSidebarProps) => {
   return (
     <div className="w-full mx-auto p-4 bg-background h-screen overflow-auto">
-      {/* <Align /> */}
       <ResumeRadialChart form={form} />
     </div>
   );

@@ -23,7 +23,7 @@ const PersonalInfoForm: React.FC = () => {
       />
 
       <InputField
-        placeholder="Title"
+        placeholder="Job Title"
         error={errors.personalInfo?.profession?.message}
         name={"personalInfo.profession" as keyof ResumeFormData}
       />

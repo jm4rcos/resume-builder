@@ -8,5 +8,5 @@ export const resumeSchema = z.object({
   personalInfo: personalInfoSchema,
   experience: z.array(experienceSchema).optional(),
   education: educationSchema.optional(),
-  skills: skillsSchema.optional(),
+  skills: z.array(skillsSchema).optional(),
 });

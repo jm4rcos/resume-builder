@@ -12,13 +12,9 @@ export const Header = ({ firstName, lastName, profession }: IPersonalInfo) => {
       <div className="flex flex-col h-full justify-around">
         <div>
           <h1 className="max-w-xs">{firstName || "First Name"}</h1>
-          {lastName ? (
-            <h1 className="max-w-xs">{lastName}</h1>
-          ) : (
-            <h1 className="max-w-xs">Last Name</h1>
-          )}
+          {lastName && <h1 className="max-w-xs">{lastName}</h1>}
         </div>
-        <p className="text-slate-500 ">{profession || "job Title"}</p>
+        {profession && <p className="max-w-xs">{profession}</p>}
       </div>
     </div>
   );

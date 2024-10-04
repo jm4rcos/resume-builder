@@ -8,7 +8,7 @@ export const InfoSidebar = ({
   form: UseFormReturn<ResumeFormData>;
 }) => {
   return (
-    <div className="w-full pb-20 h-screen bg-foreground py-6">
+    <div className="w-full py-6">
       <ResumeTabs form={form} />
     </div>
   );

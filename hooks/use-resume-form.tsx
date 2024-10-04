@@ -19,7 +19,6 @@ export const defaultValues: Partial<ResumeFormData> = {
   education: {
     degree: "",
     institution: "",
-    startDate: new Date(),
     endDate: new Date(),
   },
   skills: [],

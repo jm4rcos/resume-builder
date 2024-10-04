@@ -1,2 +1,4 @@
 import { z } from "zod";
-export const skillsSchema = z.array(z.string().min(1, "Skill is required"));
+export const skillsSchema = z.object({
+  name: z.string().min(1, "Skill name is required"),
+});
