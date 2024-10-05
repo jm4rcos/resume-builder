@@ -2,6 +2,8 @@
 
 ~~O Criador de Currículos Que Ninguém Pediu~~
 
+![hello world](public/images/resumr.png)
+
 ## 🎭 Sobre Nós (Ou Seja, Eu)
 
 Esse projeto foi criado sem propósito
