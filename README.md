@@ -31,6 +31,10 @@ Esse projeto foi criado sem propósito
 
 _Sério? Você quer usar isso? Muito obrigado :)_
 
+Simplesmente clicando no link a seguir 👉  : [https://resumr-builder.vercel.app](https://resumr-builder.vercel.app/)
+
+Mas se quer rodar localmente na sua máquina, siga as intruções abaixo:
+
 1. Clone esse repo
 
 ```bash
