@@ -11,7 +11,7 @@ Esse projeto foi criado sem propósito
 ## 🌟 "Coisas Que Funcionam" (ou deveriam)
 
 - 📝 **Construtor de Currículos Customizável**: Porque todo mundo adora preencher formulários.
-- 🌓 **Dark Mode: Olha que fofo, nos preocupamos com sua visão 🥹
+- 🌓 **Dark Mode**: Olha que fofo, nos preocupamos com sua visão 🥹
 - 🎨 **Templates Modernos**: _Vou inserir, juro_. 🤞
 - 🔄 **Pré-visualização em Tempo Real**
 - 📄 **Exportar em PDF**
