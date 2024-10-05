@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Resumr
 
-## Getting Started
+~~O Criador de Currículos Que Ninguém Pediu~~
 
-First, run the development server:
+## 🎭 Sobre Nós (Ou Seja, Eu)
+
+Esse projeto foi criado sem propósito
+
+## 🌟 "Coisas Que Funcionam" (ou deveriam)
+
+- 📝 **Construtor de Currículos Customizável**: Porque todo mundo adora preencher formulários.
+- 🎨 **Templates Modernos**: _Vou inserir, juro_.
+- 🔄 **Pré-visualização em Tempo Real**
+- 📄 **Exportar em PDF**
+
+## 🛠️ Techs usadas
+
+- Next.js
+- TypeScript
+- React Hook Form
+
+## Como Usar
+
+_Sério? Você quer usar isso? Muito obrigado :)_
+
+1. Clone esse repo
+
+```bash
+git clone https://github.com/jm4rcos/resume-bulder.git
+```
+
+2. Instale as dependências
+
+```bash
+npm install
+```
+
+3. Rode o projeto (e reze)
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Abra o navegador e acesse http://localhost:3000, caso o universo esteja ao seu favor. 🌍
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🔏 Política de Privacidade
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Como usamos seus dados?
 
-## Learn More
+- Não usamos 👍
 
-To learn more about Next.js, take a look at the following resources:
+## 🐛 Bugs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+_Prefiro chamar de "Recursos Não Documentados"_
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Mas não são bugs, são features que você ainda não entendeu.
 
-## Deploy on Vercel
+## 📞 Suporte
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Tem alguma dúvida? Eu também! Mas pode entrar em contato mesmo assim, vai que a gente descobre a resposta juntos.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🙏 Agradecimentos
+
+- Café ☕
+- Aquele tutorial indiano no YouTube sobre html to pdf 🎥
+- E mais Café
